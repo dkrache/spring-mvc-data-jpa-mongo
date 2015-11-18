@@ -137,7 +137,7 @@
     </div>
 
     <div class="footer text-center">
-        <p>DK</p>
+        <p>DK ${message}</p>
     </div>
 
     <script src="/resources/js/jquery.js"></script>
