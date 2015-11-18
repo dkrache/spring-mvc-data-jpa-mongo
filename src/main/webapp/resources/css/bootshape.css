@@ -11,7 +11,16 @@ body {
     padding: 70px 0 0 0;
 }
 .green {
-    color: #5cb85c;
+    color: #2cb82c;
+}
+.red {
+    color: #FF2c2c;
+}
+.blue {
+    color: #2c2cb8;
+}
+.white {
+    color: #FFFFFF;
 }
 .thumbs {
     padding: 40px 0;
