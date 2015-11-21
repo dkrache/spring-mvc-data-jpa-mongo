@@ -1,6 +1,5 @@
 package com.formation.djory.controller;
 
-import java.time.LocalDate;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -11,25 +10,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.formation.djory.service.MessageService;
+import com.formation.djory.service.CommentService;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/pages")
+@RequestMapping("/home/**")
 public class HomeController {
 
-	private static final String PARAM_MESSAGE = "message";
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@Autowired
-	public MessageService messageService;
+	CommentService commentService;
 
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		model.addAttribute(PARAM_MESSAGE, messageService.getMessage());
+		model.addAttribute("comments", commentService.getAll());
 		return "index";
 	}
 

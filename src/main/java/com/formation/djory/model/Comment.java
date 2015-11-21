@@ -1,30 +1,35 @@
 package com.formation.djory.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Message {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-	private long id;
+@Document
+public class Comment implements Serializable {
+	@Id
+	private String id;
 	private String message;
 	private String surname;
-	private LocalDateTime date;
+	private String date;
 
-	public Message() {
-	
+	public Comment() {
+
 	}
 
-	public Message(final long id, final String message, final String surname, final LocalDateTime date) {
+	public Comment(final String id, final String message, final String surname, final String date) {
 		this.id = id;
 		this.message = message;
 		this.setSurname(surname);
 		this.date = date;
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -36,11 +41,11 @@ public class Message {
 		this.message = message;
 	}
 
-	public LocalDateTime getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDateTime date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -56,7 +61,5 @@ public class Message {
 	public String toString() {
 		return "Message [id=" + id + ", message=" + message + ", surname=" + surname + ", date=" + date + "]";
 	}
-	
-	
 
 }
