@@ -17,5 +17,5 @@
 	</bean>
 	<!-- For defining mongo repository -->
 	<mongo:repositories base-package="com.formation.djory.persistence" />
-	
+
 </beans>

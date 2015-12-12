@@ -16,7 +16,7 @@ import com.formation.djory.service.CommentService;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/home/**")
+@RequestMapping("/home")
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
